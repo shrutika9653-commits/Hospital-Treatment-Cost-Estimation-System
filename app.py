@@ -13,8 +13,8 @@ age = st.sidebar.number_input("Enter age", min_value = 10, max_value = 99, step 
 Sex = st.sidebar.selectbox("Select Gender",["Male","Famale"])
 bmi = st.sidebar.number_input("Enter bmi", min_value = 15.00, max_value = 55.00, step = 0.1)
 children = st.sidebar.number_input("Enter children", value = 0, min_value = 0, max_value = 10, step = 1)
-smokers = sorted(df[df['age'] == age]['smoker'].unique())
-smoker = st.sidebar.selectbox("Select smoker", smokers)
+#smokers = sorted(df[df['age'] == age]['smoker'].unique())
+smoker = st.sidebar.selectbox("Select smoker",["Yes","No"])
 region = st.sidebar.selectbox("Select region",["southwest","southeast","northwest","northeast",])
 
 
