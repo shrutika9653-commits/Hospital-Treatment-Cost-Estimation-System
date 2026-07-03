@@ -31,7 +31,7 @@ if st.sidebar.button("Predicted charges"):
     columns = ['age', 'Sex', 'bmi', 'children', 'smoker','region']
     myinput = [[age, Sex, bmi, children, smoker,region]]
     myinput = pd.DataFrame(data = myinput, columns = columns)
-    #st.write(myinput)
+    st.write(myinput)
     result = model.predict(myinput)
     if result[0,0] < 0:
         st.error("Sorry, inputs are wrong.")
