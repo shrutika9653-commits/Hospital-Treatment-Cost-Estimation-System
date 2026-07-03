@@ -10,11 +10,11 @@ model = pickle.load(open("model.pkl","rb"))
 #sex = sorted(df['sex'].unique())
 
 age = st.sidebar.number_input("Enter age", min_value = 10, max_value = 99, step = 1)
-sex = st.sidebar.selectbox("Select Gender",["Male","Female"])
+sex = st.sidebar.selectbox("Select Gender",["male","female"])
 bmi = st.sidebar.number_input("Enter bmi", min_value = 15.00, max_value = 55.00, step = 0.1)
 children = st.sidebar.number_input("Enter children", value = 0, min_value = 0, max_value = 10, step = 1)
 #smokers = sorted(df[df['age'] == age]['smoker'].unique())
-smoker = st.sidebar.selectbox("Select smoker",["Yes","No"])
+smoker = st.sidebar.selectbox("Select smoker",["yes","no"])
 region = st.sidebar.selectbox("Select region",["southwest","southeast","northwest","northeast",])
 
 
