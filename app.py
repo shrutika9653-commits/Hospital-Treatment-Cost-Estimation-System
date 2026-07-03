@@ -7,10 +7,10 @@ st.title(" Hospital Treatment Cost Estimation System")
 df = pd.read_csv("final_insurance.csv")
 model = pickle.load(open("model.pkl","rb"))
 
-#Sex = sorted(df['Sex'].unique())
+#sex = sorted(df['sex'].unique())
 
 age = st.sidebar.number_input("Enter age", min_value = 10, max_value = 99, step = 1)
-Sex = st.sidebar.selectbox("Select Gender",["Male","Famale"])
+sex = st.sidebar.selectbox("Select Gender",["Male","Famale"])
 bmi = st.sidebar.number_input("Enter bmi", min_value = 15.00, max_value = 55.00, step = 0.1)
 children = st.sidebar.number_input("Enter children", value = 0, min_value = 0, max_value = 10, step = 1)
 #smokers = sorted(df[df['age'] == age]['smoker'].unique())
@@ -21,15 +21,15 @@ region = st.sidebar.selectbox("Select region",["southwest","southeast","northwes
 if st.sidebar.button("Predicted charges"):
     st.write("Predicting for")
     st.write("age: ", str(age))
-    st.write("Sex: ", Sex)
+    st.write("sex: ", sex)
     st.write("bmi: ", str(bmi))
     st.write("children: ", str(children))
     st.write("smoker: ", smoker)
     st.write("region: ", region)
     
 
-    columns = ['age', 'Sex', 'bmi', 'children', 'smoker','region']
-    myinput = [[age, Sex, bmi, children, smoker,region]]
+    columns = ['age', 'sex', 'bmi', 'children', 'smoker','region']
+    myinput = [[age, sex, bmi, children, smoker,region]]
     myinput = pd.DataFrame(data = myinput, columns = columns)
     st.write(myinput)
     result = model.predict(myinput)
