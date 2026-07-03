@@ -24,7 +24,7 @@ if st.sidebar.button("Predicted charges"):
     st.write("Sex: ", Sex)
     st.write("bmi: ", str(bmi))
     st.write("children: ", str(children))
-    st.write("smokers: ", smokers)
+    st.write("smoker: ", smoker)
     st.write("region: ", region)
     
 
