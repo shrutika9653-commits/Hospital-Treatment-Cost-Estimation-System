@@ -5,7 +5,7 @@ import pickle
 
 st.title(" Hospital Treatment Cost Estimation System")
 df = pd.read_csv("final_insurance.csv")
-model = pickle.load(open("model.pkl','wb"))
+model = pickle.load(open("model.pkl','rb"))
 
 #Sex = sorted(df['Sex'].unique())
 
